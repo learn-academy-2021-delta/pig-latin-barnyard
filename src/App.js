@@ -53,7 +53,7 @@ class App extends Component{
       } else if(value.search(/[aeiouAEIOU]/) === 2){
         return value.slice(2) + value.slice(0,2) + "ay"
       }else if(value.search(/[aeiouAEIOU]/) === 1){
-        return value.slice(1) + value.slice(0) + "ay"
+        return value.slice(1) + value.slice(0,1) + "ay"
       }
       
 
