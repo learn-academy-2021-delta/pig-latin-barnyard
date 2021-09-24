@@ -32,17 +32,15 @@ class App extends Component{
         return vowel === "a" || vowel === "e" || vowel === "i" || vowel === "o" || vowel === "u"
       })
       console.log("vowelsArray:", vowelsArray)
-      //for loop to find index of vowel
-      //.slice() 
-      //.substring(1)
-      // your code here!
-      for(let i=0; i=currentWord.length; i++){
-        if(currentWord[i] === vowelsArray)
-        return currentWord + "way"
-      } else {
-        return currentWord + "ay"
+      let value = currentWord
+      if(vowelsArray.length === 0){
+       let noVowel = value.slice(value.indexOf("y")) + value.slice(0,value.indexOf("y")) + "ay";
+       return noVowel
+      } else if(vowelsArray.length > 0) {
+        let q=value[0] === "q" || value[0] === "Q" && value[1] === "u" || value[1] === "U";
+        return value.slice(2) + value.slice(0,2) + "ay"
       }
-      console.log(currentWord.slice(vowelsArray))
+      
       // Remember: console.log is your friend :)
 
 
