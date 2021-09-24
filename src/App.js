@@ -47,8 +47,15 @@ class App extends Component{
       else if(value[0] === "a" || value[0] === "e" || value[0] === "i" || value[0] === "0" || value[0] === "u"){
         return value + "way"
       } else if(value[1] === "a" || value[1] === "e" || value[1] === "i" || value[1] === "0" || value[1] === "u") {
-        
+        return value.slice(1) + value.slice(0,1) + "ay"
+      } else if(value.search(/[aeiouAEIOU]/) === 3){
+        return value.slice(3) + value.slice(0,3) + "ay"
+      } else if(value.search(/[aeiouAEIOU]/) === 2){
+        return value.slice(2) + value.slice(0,2) + "ay"
+      }else if(value.search(/[aeiouAEIOU]/) === 1){
+        return value.slice(1) + value.slice(0) + "ay"
       }
+      
 
     
       
@@ -116,7 +123,7 @@ class App extends Component{
           <button onClick={this.restartGame}>Clear</button>
         </div>
         <p>{this.state.phraseTranslated}</p>
-        <footer>Coded by ~your name here~</footer>
+        <footer>Coded by Team Barnyard!~</footer>
       </>
     )
   }
